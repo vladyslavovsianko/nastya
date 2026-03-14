@@ -100,18 +100,18 @@
     }
 
     /* ── SECTIONS ── */
-    section { padding: 40px 24px; }
+    section { padding: 32px 24px; }
     .section-inner { max-width: 680px; margin: 0 auto; text-align: center; }
 
     .section-label {
       font-family: 'Montserrat', sans-serif;
       font-size: 10px; font-weight: 500;
       letter-spacing: 0.35em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px; display: block;
+      color: var(--gold); margin-bottom: 12px; display: block;
     }
     .section-divider {
       display: flex; align-items: center; justify-content: center;
-      gap: 12px; margin-bottom: 36px;
+      gap: 12px; margin-bottom: 20px;
     }
     .section-divider-line { width: 56px; height: 1px; background: var(--line); }
     .section-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); }
@@ -121,21 +121,24 @@
     .invitation-text {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(18px, 3vw, 22px); font-weight: 300;
-      line-height: 1.85; color: var(--text);
+      line-height: 1.7; color: var(--text);
     }
+    .invitation-text p { margin-bottom: 12px; }
+    .invitation-text p:last-child { margin-bottom: 0; }
 
     /* ── PHOTO COLLAGE ── */
     .photo-collage { padding: 0; display: flex; flex-direction: column; gap: 0; }
 
+    /* На ПК — 3 фото в ряд одинаковой высоты */
     .photo-collage-top { width: 100%; height: 420px; overflow: hidden; }
     .photo-collage-top img {
       width: 100%; height: 100%;
-      object-fit: cover; object-position: center 68%;
+      object-fit: cover; object-position: center 40%;
       display: block; transition: transform 0.6s ease;
     }
     .photo-collage-top:hover img { transform: scale(1.02); }
 
-    .photo-collage-bottom { display: flex; gap: 0; height: 260px; }
+    .photo-collage-bottom { display: flex; gap: 0; height: 280px; }
     .photo-collage-item { flex: 1; overflow: hidden; }
     .photo-collage-item img {
       width: 100%; height: 100%;
@@ -144,8 +147,10 @@
     }
     .photo-collage-item:hover img { transform: scale(1.02); }
 
-    @media (max-width: 600px) {
+    /* На мобиле — сохраняем пропорции 1 большое + 2 маленьких */
+    @media (max-width: 700px) {
       .photo-collage-top  { height: 72vw; }
+      .photo-collage-top img { object-position: center 55%; }
       .photo-collage-bottom { height: 46vw; }
     }
 
@@ -156,7 +161,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(28px, 5vw, 42px); font-weight: 300; font-style: italic;
       color: var(--dark); letter-spacing: 0.08em;
-      margin-bottom: 48px; display: block;
+      margin-bottom: 28px; display: block;
     }
     .timeline-items { display: flex; flex-direction: column; align-items: center; position: relative; }
     .timeline-items::before {
@@ -165,7 +170,7 @@
     }
     .timeline-item {
       display: flex; flex-direction: column; align-items: center;
-      position: relative; z-index: 1; padding: 28px 0; width: 100%;
+      position: relative; z-index: 1; padding: 18px 0; width: 100%;
     }
     .timeline-dot {
       width: 12px; height: 12px; border-radius: 50%;
@@ -249,7 +254,7 @@
     }
 
     /* ── CLOSING ── */
-    .closing { background-color: var(--cream); padding: 32px 24px; }
+    .closing { background-color: var(--cream); padding: 28px 24px; }
     .closing-text {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(20px, 3.5vw, 28px); font-weight: 300;
@@ -388,14 +393,11 @@
         <div class="section-divider-diamond"></div>
         <div class="section-divider-line"></div>
       </div>
-      <p class="invitation-text fade-up">
-        Мы сделали этот выбор — быть вместе, идти по жизни рука об руку
-        и создавать своё маленькое счастье.<br><br>
-        Наша официальная церемония уже состоялась,
-        но настоящий праздник невозможен без вас.<br><br>
-        Будем счастливы видеть вас на торжестве
-        в честь начала нашей семейной жизни.
-      </p>
+      <div class="invitation-text fade-up">
+        <p>Мы сделали этот выбор — быть вместе, идти по жизни рука об руку и создавать своё маленькое счастье.</p>
+        <p>Наша официальная церемония уже состоялась, но настоящий праздник невозможен без вас.</p>
+        <p>Будем счастливы видеть вас на торжестве в честь начала нашей семейной жизни.</p>
+      </div>
     </div>
   </section>
 
