@@ -100,7 +100,7 @@
     }
 
     /* ── SECTIONS ── */
-    section { padding: 48px 24px; }
+    section { padding: 40px 24px; }
     .section-inner { max-width: 680px; margin: 0 auto; text-align: center; }
 
     .section-label {
@@ -125,34 +125,30 @@
     }
 
     /* ── PHOTO COLLAGE ── */
-    .photo-collage { padding: 0; display: flex; flex-direction: column; gap: 0; background: var(--cream); }
+    .photo-collage { padding: 0; display: flex; flex-direction: column; gap: 0; }
 
-    .photo-collage-top { width: 100%; height: 340px; overflow: hidden; }
+    .photo-collage-top { width: 100%; height: 420px; overflow: hidden; }
     .photo-collage-top img {
       width: 100%; height: 100%;
-      object-fit: contain; display: block;
-      transition: transform 0.6s ease;
+      object-fit: cover; object-position: center 68%;
+      display: block; transition: transform 0.6s ease;
     }
     .photo-collage-top:hover img { transform: scale(1.02); }
 
-    .photo-collage-bottom { display: flex; gap: 0; height: 220px; }
+    .photo-collage-bottom { display: flex; gap: 0; height: 260px; }
     .photo-collage-item { flex: 1; overflow: hidden; }
     .photo-collage-item img {
       width: 100%; height: 100%;
-      object-fit: contain; display: block;
+      object-fit: cover; display: block;
       transition: transform 0.6s ease;
     }
     .photo-collage-item:hover img { transform: scale(1.02); }
 
     @media (max-width: 600px) {
-      .photo-collage-top  { height: 260px; }
-      .photo-collage-bottom { height: 160px; }
+      .photo-collage-top  { height: 72vw; }
+      .photo-collage-bottom { height: 46vw; }
     }
 
-    /* ── PHOTO FULL WIDTH ── */
-    .photo-full { padding: 0; height: 320px; background: var(--cream); overflow: hidden; }
-    .photo-full img { width: 100%; height: 100%; object-fit: contain; display: block; }
-    @media (max-width: 600px) { .photo-full { height: 220px; } }
 
     /* ── TIMELINE ── */
     .timeline { background-color: var(--cream); }
@@ -253,7 +249,7 @@
     }
 
     /* ── CLOSING ── */
-    .closing { background-color: var(--cream); padding: 40px 24px 40px; }
+    .closing { background-color: var(--cream); padding: 32px 24px; }
     .closing-text {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(20px, 3.5vw, 28px); font-weight: 300;
@@ -410,10 +406,10 @@
     </div>
     <div class="photo-collage-bottom">
       <div class="photo-collage-item">
-        <img src="image/photo287.jpg" alt="Дмитро и Анастасия" />
+        <img src="image/photo287.jpg" alt="Дмитро и Анастасия" style="object-position: center 65%;" />
       </div>
       <div class="photo-collage-item">
-        <img src="image/photo318.jpg" alt="Дмитро и Анастасия" />
+        <img src="image/photo318.jpg" alt="Дмитро и Анастасия" style="object-position: center 50%;" />
       </div>
     </div>
   </div>
@@ -448,11 +444,6 @@
       </div>
     </div>
   </section>
-
-  <!-- PHOTO FULL WIDTH -->
-  <div class="photo-full">
-    <img src="image/photo202.jpg" alt="Дмитро и Анастасия" />
-  </div>
 
   <!-- DETAILS -->
   <section class="details">
