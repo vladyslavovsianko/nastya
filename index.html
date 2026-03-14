@@ -127,19 +127,20 @@
     .invitation-text p:last-child { margin-bottom: 0; }
 
     /* ── PHOTO COLLAGE ── */
-    .photo-collage { padding: 0; display: flex; flex-direction: column; gap: 0; }
+    .photo-collage { padding: 0; display: flex; gap: 0; }
 
-    /* На ПК — 3 фото в ряд одинаковой высоты */
-    .photo-collage-top { width: 100%; height: 420px; overflow: hidden; }
+    /* ПК: все 3 фото в одну строку */
+    .photo-collage { flex-direction: row; height: 480px; }
+    .photo-collage-top { flex: 1; overflow: hidden; height: 100%; }
     .photo-collage-top img {
       width: 100%; height: 100%;
-      object-fit: cover; object-position: center 40%;
+      object-fit: cover; object-position: center 45%;
       display: block; transition: transform 0.6s ease;
     }
     .photo-collage-top:hover img { transform: scale(1.02); }
 
-    .photo-collage-bottom { display: flex; gap: 0; height: 280px; }
-    .photo-collage-item { flex: 1; overflow: hidden; }
+    .photo-collage-bottom { flex: 2; display: flex; gap: 0; height: 100%; }
+    .photo-collage-item { flex: 1; overflow: hidden; height: 100%; }
     .photo-collage-item img {
       width: 100%; height: 100%;
       object-fit: cover; display: block;
@@ -147,11 +148,13 @@
     }
     .photo-collage-item:hover img { transform: scale(1.02); }
 
-    /* На мобиле — сохраняем пропорции 1 большое + 2 маленьких */
+    /* Мобиле: 1 большое сверху + 2 маленьких снизу */
     @media (max-width: 700px) {
-      .photo-collage-top  { height: 72vw; }
+      .photo-collage { flex-direction: column; height: auto; }
+      .photo-collage-top { flex: none; width: 100%; height: 72vw; }
       .photo-collage-top img { object-position: center 55%; }
-      .photo-collage-bottom { height: 46vw; }
+      .photo-collage-bottom { flex: none; width: 100%; height: 46vw; }
+      .photo-collage-item { height: 100%; }
     }
 
 
